@@ -4,33 +4,33 @@ export interface Imagen {
 
 export const imagenes: Imagen[] = [
   {
-    src: "galeria-01.jpg",
+    src: "galeria-01.webp",
   },
   {
-    src: "galeria-02.jpg",
+    src: "galeria-02.webp",
   },
   {
-    src: "galeria-03.jpg",
+    src: "galeria-03.webp",
   },
   {
-    src: "galeria-04.jpg",
+    src: "galeria-04.webp",
   },
   {
-    src: "galeria-05.jpg",
+    src: "galeria-05.webp",
   },
   {
-    src: "galeria-06.jpg",
+    src: "galeria-06.webp",
   },
   {
-    src: "galeria-07.jpg",
+    src: "galeria-07.webp",
   },
   {
-    src: "galeria-08.jpg",
+    src: "galeria-08.webp",
   },
   {
-    src: "galeria-09.jpg",
+    src: "galeria-09.webp",
   },
   {
-    src: "galeria-10.jpg",
+    src: "galeria-10.webp",
   },
 ];
