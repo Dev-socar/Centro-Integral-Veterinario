@@ -47,9 +47,9 @@ const currentPath = Astro.url.pathname;
         <a
           href={href}
           class:list={[
-            "text-xl font-light",
+            "text-xl font-light block",
             {
-              "border-b-2 border-blue-500": currentPath === href,
+              "text-blue-600": currentPath === href,
             },
           ]}
         >
