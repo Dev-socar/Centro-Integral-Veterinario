@@ -1,0 +1,144 @@
+---
+import { Icon } from "astro-icon/components";
+
+const icons = [
+  {
+    name: "whatsapp",
+    href: "#",
+  },
+  {
+    name: "facebook",
+    href: "#",
+  },
+  {
+    name: "instagram",
+    href: "#",
+  },
+];
+
+const links = [
+  { href: "/", text: "Inicio" },
+  { href: "/servicios", text: "Servicios" },
+  { href: "/galeria", text: "Galeria" },
+  { href: "/sobre-nosotros", text: "Sobre Nosotros" },
+  { href: "/testimoniales", text: "Testimoniales" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<div class="mt-5">
+  <div class="bg-gray-100 py-4 text-black">
+    <div class="container px-4 mx-auto">
+      <div class="-mx-4 flex flex-wrap items-start justify-around">
+        <div class="px-4 w-full sm:w-auto md:w-1/3">
+          <a
+            href="/"
+            class="w-auto flex gap-3 items-center text-2xl font-extrabold tracking-tight text-gray-800"
+          >
+            <img
+              src="logotipo.png"
+              class="size-12"
+              alt="logotipo de la empresa Centro Integral Veterinario"
+            />
+            Centro Integral <span class="font-bold text-blue-500"
+              >Veterinario</span
+            >
+          </a>
+          <div class="pb-4 mb-4 border-b-4 border-blue-600"></div>
+          <p class="text-justify font-thin text-base sm:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+            aspernatur, ducimus ab, est sapiente labore modi enim, rem ut magnam
+            pariatur debitis voluptatem quis explicabo consectetur atque dolore
+            cupiditate. Corrupti?
+          </p>
+        </div>
+        <div class="px-4 my-4 w-full sm:w-auto">
+          <div>
+            <h2
+              class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600"
+            >
+              Menu
+            </h2>
+          </div>
+          <nav class="leading-8">
+            {
+              links.map(({ href, text }) => (
+                <a
+                  href={href}
+                  class:list={[
+                    "hover:text-blue-500 block font-thin sm:text-lg",
+                    {
+                      current: currentPath === href,
+                    },
+                  ]}
+                >
+                  {text}
+                </a>
+              ))
+            }
+          </nav>
+        </div>
+
+        <div class="px-4 my-4 w-full sm:w-auto">
+          <div>
+            <h2
+              class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600"
+            >
+              Connect With Us
+            </h2>
+          </div>
+          {
+            icons.map(({ name, href }) => (
+              <a
+                href={href}
+                class="inline-flex items-center justify-center size-11 border border-gray-100 rounded-full mr-1 hover:text-blue-600 hover:border-blue-500"
+              >
+                <Icon name={name} size="30" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-blue-600 py-4 text-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="-mx-4 flex flex-wrap justify-between">
+        <div
+          class="px-4 w-full text-center sm:w-auto sm:text-left font-thin sm:text-lg"
+        >
+          Copyright &copy; <span id="currentYear"></span> Centro Integral Veterinario.
+          Todos lo derechos reservados
+        </div>
+        <div class="px-4 w-full text-center sm:w-auto sm:text-left font-thin">
+          <p>
+            Sitio web realizado por <a
+              href="https://portfolio-omar-solis.vercel.app/"
+              target="_blank"
+              class="font-normal">Omar Solis</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import currentYear from "../../js/currentYear";
+    currentYear("currentYear");
+
+    document.addEventListener("DOMContentLoaded", () =>
+      currentYear("currentYear")
+    );
+    document.addEventListener("astro:page-load", () =>
+      currentYear("currentYear")
+    );
+  </script>
+
+  <style>
+    .current {
+      @apply font-normal text-blue-600;
+    }
+  </style>
+</div>

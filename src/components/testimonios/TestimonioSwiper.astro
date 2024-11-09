@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+const { testimonio } = Astro.props;
+---
+
+<div class="swiper-slide testimonio">
+  <div
+    class="flex flex-col justify-center items-center"
+  >
+    <h2 class="text-2xl text-white font-semibold">{testimonio.nombre}</h2>
+    <span class="text-gray-100  mt-1">{testimonio.fecha}</span>
+    <p class="text-slate-50 mt-3 text-center sm:text-lg">
+      {testimonio.testimonio}
+    </p>
+    <div class="flex gap-2 mt-3">
+      {
+        Array.from({ length: testimonio.calificacion }).map(() => (
+          <Icon name="star" size="20" />
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonio {
+    @apply flex justify-center items-center p-5;
+  }
+</style>

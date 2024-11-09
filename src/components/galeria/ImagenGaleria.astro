@@ -1,0 +1,19 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<div
+  class="w-full h-70 overflow-hidden"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
+  <img
+    class="h-full w-full object-cover rounded-lg hover:scale-110 transition-all"
+    src={`galeria/${src}`}
+    alt="Imagen de la galeria"
+  />
+</div>

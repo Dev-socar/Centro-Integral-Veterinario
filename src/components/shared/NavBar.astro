@@ -1,0 +1,86 @@
+---
+import { Icon } from "astro-icon/components";
+
+const links = [
+  { href: "/", text: "Inicio" },
+  { href: "/servicios", text: "Servicios" },
+  { href: "/galeria", text: "Galeria" },
+  { href: "/sobre-nosotros", text: "Sobre Nosotros" },
+  { href: "/testimoniales", text: "Testimoniales" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav
+  class="bg-white p-5 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between shadow"
+>
+  <!-- Logo o Teléfono principal -->
+  <div class="flex justify-between items-center">
+    <a
+      href="#"
+      class="flex items-center justify-center lg:justify-normal gap-2 text-lg text-gray-500"
+    >
+      <img
+        src="logotipo.png"
+        class="size-16"
+        alt="logotipo de la empresa Centro Integral Veterinario"
+      />
+    </a>
+
+    <button
+      class="lg:hidden flex items-center text-blue-500"
+      aria-label="Toggle navigation menu"
+      id="menuToggle"
+    >
+      <Icon name="menu" size="30" />
+    </button>
+  </div>
+
+  <!-- Menú de navegación con animación y oculto en móvil por defecto -->
+  <div
+    id="menuLinks"
+    class="hidden lg:flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-center lg:gap-5"
+  >
+    {
+      links.map(({ href, text }) => (
+        <div>
+          <a href={href} class="text-xl font-light">
+            {text}
+          </a>
+          {currentPath === href ? (
+            <div
+              transition:name="menu-line"
+              class="border-b-2 border-blue-500"
+            />
+          ) : (
+            <div class="border-b-2  border-transparent" />
+          )}
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Otro enlace adicional o teléfono -->
+  <a
+    href="#"
+    class="hidden lg:flex items-center font-thin justify-center gap-2 text-xl text-gray-500"
+  >
+    <Icon name="phone" size="30" />
+    999 711 248
+  </a>
+</nav>
+
+<script>
+  const setupMenuToggle = () => {
+    const menuLinks = document.querySelector("#menuLinks") as HTMLDivElement;
+    const button = document.querySelector("#menuToggle") as HTMLButtonElement;
+
+    button?.addEventListener("click", () => {
+      menuLinks.classList.toggle("hidden");
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", setupMenuToggle);
+  document.addEventListener("astro:after-swap", setupMenuToggle);
+</script>

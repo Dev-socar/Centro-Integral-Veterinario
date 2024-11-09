@@ -1,0 +1,37 @@
+---
+import ServicioCard from "../components/servicios/ServicioCard.astro";
+import Banner from "../components/shared/Banner.astro";
+import Enlace from "../components/shared/Enlace.astro";
+import Heading from "../components/shared/Heading.astro";
+import { servicios } from "../content/servicios/servicios";
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout titulo="Centro Integral Veterinario - Servicios">
+  <Banner imgSrc="banner-servicio.jpg" />
+  <section class="mt-10 w-[90%] mx-auto overflow-hidden">
+    <Heading texto="Nuestros" span="Servicios" />
+    <p class="my-5 text-lg text-gray-500 font-thin">
+      En nuestro hospital veterinario, brindamos atención de calidad y compasión
+      para el bienestar de su mascota. Ofrecemos una amplia gama de servicios,
+      que incluyen consultas, diagnósticos avanzados, cirugía y planes de
+      prevención adaptados a cada etapa de la vida de su compañero. Nuestro
+      equipo de veterinarios y técnicos capacitados trabaja con la última
+      tecnología y un profundo compromiso para asegurar la salud y felicidad de
+      su mascota. ¡Contáctenos hoy mismo para programar una cita y brindarle a
+      su mascota el cuidado que merece!
+    </p>
+
+    <div
+      class="grid sm:grid-cols-2 gap-5 sm:gap-10 sm:w-[90%] sm:mx-auto mt-10"
+    >
+      {
+        servicios.map((servcio, index) => (
+          <ServicioCard servicio={servcio} index={index} />
+        ))
+      }
+    </div>
+
+    <Enlace href="#" texto="Cotizar Servicio" />
+  </section>
+</Layout>

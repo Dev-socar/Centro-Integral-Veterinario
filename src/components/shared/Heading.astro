@@ -1,0 +1,15 @@
+---
+interface Props {
+  texto: string;
+  span: string;
+}
+
+const { texto, span } = Astro.props;
+---
+
+<h2
+  class="text-center text-4xl font-extrabold leading-10 tracking-tight text-gray-800 sm:text-5xl sm:leading-none md:text-6xl capitalize"
+>
+  🐾 {texto}
+  <span class="font-bold text-blue-500 lg:mt-2 capitalize">{span}</span> 🐾
+</h2>

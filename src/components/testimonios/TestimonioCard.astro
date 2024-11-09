@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Testimonio } from "../../content/testimonios/testimonios";
+
+interface Props {
+  testimonio: Testimonio;
+  index: number;
+}
+
+const { testimonio, index } = Astro.props;
+---
+
+<div
+  class="py-2 flex flex-col justify-between px-2 sm:pl-10 rounded shadow bg-blue-50 hover:bg-blue-100 transition-colors"
+  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+  data-aos-duration="1000"
+>
+  <div>
+    <Icon name="comillas" size="50" />
+
+    <p class="text-gray-500 text-lg">{testimonio.testimonio}</p>
+  </div>
+  <div
+    class="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-3"
+  >
+    <h3 class="text-xl font-semibold">{testimonio.nombre}</h3>
+    <div class="flex items-center gap-2">
+      {
+        Array.from({ length: testimonio.calificacion }).map(() => (
+          <Icon name="star" size="25" />
+        ))
+      }
+    </div>
+  </div>
+</div>

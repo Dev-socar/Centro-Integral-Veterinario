@@ -1,0 +1,16 @@
+---
+interface Props {
+  clases:string
+}
+
+const {clases} = Astro.props
+---
+
+<iframe
+  class={clases}
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.638100835885!2d-89.61166432512759!3d20.926874891270913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56714f16f268db%3A0x8f5eb87f4d597725!2sDra.%20Shirley%20Fajardo%20Centro%20Integral%20Veterinario!5e0!3m2!1ses!2smx!4v1730960359312!5m2!1ses!2smx"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"></iframe>

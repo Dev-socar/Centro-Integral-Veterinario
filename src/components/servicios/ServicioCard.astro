@@ -1,0 +1,32 @@
+---
+import type { Servicio } from "../../content/servicios/servicios";
+
+interface Props {
+  servicio: Servicio;
+  index: number;
+}
+
+const { servicio, index } = Astro.props;
+---
+
+<div
+  class="flex items-center"
+  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+  data-aos-duration="1000"
+>
+  <div
+    class="w-28 h-28 sm:w-44 sm:h-44 overflow-hidden rounded-full flex-shrink-0"
+  >
+    <img
+      class="w-full h-full object-cover"
+      src={`servicios/${servicio.imagen}`}
+      alt="Imagen del servicio"
+    />
+  </div>
+  <div class="ml-4">
+    <p class="text-lg sm:text-xl uppercase font-semibold">
+      {servicio.servicio}
+    </p>
+    <p class="text-sm sm:text-lg font-thin mt-2">{servicio.descripcion}</p>
+  </div>
+</div>
