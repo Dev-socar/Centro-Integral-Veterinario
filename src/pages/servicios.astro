@@ -3,7 +3,7 @@ import ServicioCard from "../components/servicios/ServicioCard.astro";
 import Banner from "../components/shared/Banner.astro";
 import Enlace from "../components/shared/Enlace.astro";
 import Heading from "../components/shared/Heading.astro";
-import { servicios } from "../content/servicios/servicios";
+import { servicios } from "../interfaces/servicios/servicios";
 import Layout from "../layout/Layout.astro";
 ---
 
@@ -11,7 +11,7 @@ import Layout from "../layout/Layout.astro";
   <Banner imgSrc="banner-servicio.jpg" />
   <section class="mt-10 w-[90%] mx-auto overflow-hidden">
     <Heading texto="Nuestros" span="Servicios" />
-    <p class="my-5 text-lg text-gray-500 font-thin">
+    <p class="my-5 text-lg text-gray-500">
       En nuestro hospital veterinario, brindamos atención de calidad y compasión
       para el bienestar de su mascota. Ofrecemos una amplia gama de servicios,
       que incluyen consultas, diagnósticos avanzados, cirugía y planes de

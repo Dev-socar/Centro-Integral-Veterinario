@@ -1,5 +1,5 @@
 ---
-import type { Integrante } from "../../content/integrantes/integrantes";
+import type { Integrante } from "../../interfaces/integrantes/integrantes";
 
 interface Props {
   integrante: Integrante;
@@ -16,7 +16,7 @@ const { integrante } = Astro.props;
       alt="Imagen del Integrante"
     />
   </div>
-  <p class="my-3 text-center text-gray-500 font-semibold">
+  <p class="my-3 text-center text-blue-500 font-semibold">
     {`${integrante.puesto}. ${integrante.nombre}`}
   </p>
 </div>

@@ -6,7 +6,7 @@ import LineSeparator from "../components/shared/LineSeparator.astro";
 import Layout from "../layout/Layout.astro";
 import IntegrantesCard from "../components/nosotros/IntegrantesCard.astro";
 
-import { integrantes } from "../content/integrantes/integrantes";
+import { integrantes } from "../interfaces/integrantes/integrantes";
 import Horario from "../components/shared/Horario.astro";
 import UbicacionMapa from "../components/shared/UbicacionMapa.astro";
 ---
@@ -19,7 +19,7 @@ import UbicacionMapa from "../components/shared/UbicacionMapa.astro";
       class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-evenly sm:items-center m-10"
     >
       <div class="sm:flex-col sm:gap-10 sm:w-1/2">
-        <h3 class="text-xl text-center sm:text-left sm:text-4xl">
+        <h3 class="text-2xl text-center sm:text-left sm:text-4xl">
           ¿Quiénes Somos?
         </h3>
         <p
@@ -47,7 +47,7 @@ import UbicacionMapa from "../components/shared/UbicacionMapa.astro";
         <img src="banner-nosotros.jpg" alt="Imagen de Mision" />
       </div>
       <div>
-        <h3 class="text-xl text-center sm:text-4xl">Mision</h3>
+        <h3 class="text-2xl text-center sm:text-4xl">Mision</h3>
         <p class="text-lg text-center mt-2 sm:text-xl text-gray-500">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
           expedita delectus error cumque quas placeat dolor in dicta similique
@@ -62,7 +62,7 @@ import UbicacionMapa from "../components/shared/UbicacionMapa.astro";
       data-aos-duration="1000"
     >
       <div>
-        <h3 class="text-xl text-center sm:text-4xl">Vision</h3>
+        <h3 class="text-2xl text-center sm:text-4xl">Vision</h3>
         <p class="text-lg text-center mt-2 sm:text-xl text-gray-500">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
           expedita delectus error cumque quas placeat dolor in dicta similique
@@ -77,7 +77,7 @@ import UbicacionMapa from "../components/shared/UbicacionMapa.astro";
     <LineSeparator />
 
     <div>
-      <h3 class="text-xl text-center sm:text-4xl">Nuestro Equipo</h3>
+      <h3 class="text-2xl text-center sm:text-4xl">Nuestro Equipo</h3>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 mt-5">
         {
           integrantes.map((integrante) => (
@@ -89,7 +89,7 @@ import UbicacionMapa from "../components/shared/UbicacionMapa.astro";
     <LineSeparator />
 
     <div>
-      <h3 class="text-xl text-center sm:text-4xl">
+      <h3 class="text-2xl text-center sm:text-4xl">
         Visítanos en Nuestros Horarios
       </h3>
       <div class="grid sm:grid-cols-2 gap-2 mt-5 px-2">

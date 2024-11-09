@@ -18,7 +18,7 @@ const currentPath = Astro.url.pathname;
   <!-- Logo o Teléfono principal -->
   <div class="flex justify-between items-center">
     <a
-      href="#"
+      href="/"
       class="flex items-center justify-center lg:justify-normal gap-2 text-lg text-gray-500"
     >
       <img
@@ -44,7 +44,7 @@ const currentPath = Astro.url.pathname;
   >
     {
       links.map(({ href, text }) => (
-        <a href={href} class="text-xl font-light">
+        <a href={href} class="text-xl font-light block">
           {text}
         </a>
       ))
@@ -54,7 +54,7 @@ const currentPath = Astro.url.pathname;
   <!-- Otro enlace adicional o teléfono -->
   <a
     href="#"
-    class="hidden lg:flex items-center font-thin justify-center gap-2 text-xl text-gray-500"
+    class="hidden lg:flex items-center justify-center gap-2 text-xl text-gray-500  hover:text-blue-600 transition-colors"
   >
     <Icon name="phone" size="30" />
     999 711 248
@@ -69,15 +69,14 @@ const currentPath = Astro.url.pathname;
     button?.addEventListener("click", () => {
       menuLinks.classList.toggle("hidden");
     });
-    // Get all the links in the menu
+    
     const links = menuLinks.querySelectorAll("a");
 
-    // Get the current path (without the domain part)
+   
     const currentPath = window.location.pathname;
 
-    // Check each link's href and compare the relative path
     links.forEach((link) => {
-      const linkPath = new URL(link.href).pathname; // Get the relative path of the link
+      const linkPath = new URL(link.href).pathname; 
 
       if (linkPath === currentPath) {
         link.classList.add("border-b-2", "border-blue-500");

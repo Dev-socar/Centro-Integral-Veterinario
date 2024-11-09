@@ -1,9 +1,11 @@
 ---
+import type { Imagen } from '../../interfaces/galeria/galeria';
+
 interface Props {
-  src: string;
+  imagen: Imagen;
 }
 
-const { src } = Astro.props;
+const { imagen } = Astro.props;
 ---
 
 <div
@@ -13,7 +15,7 @@ const { src } = Astro.props;
 >
   <img
     class="h-full w-full object-cover rounded-lg hover:scale-110 transition-all"
-    src={`galeria/${src}`}
+    src={`galeria/${imagen.src}`}
     alt="Imagen de la galeria"
   />
 </div>

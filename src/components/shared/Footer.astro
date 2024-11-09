@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
             >
           </a>
           <div class="pb-4 mb-4 border-b-4 border-blue-600"></div>
-          <p class="text-justify font-thin text-base sm:text-lg">
+          <p class="text-justify text-gray-500 text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
             aspernatur, ducimus ab, est sapiente labore modi enim, rem ut magnam
             pariatur debitis voluptatem quis explicabo consectetur atque dolore
@@ -67,7 +67,7 @@ const currentPath = Astro.url.pathname;
                 <a
                   href={href}
                   class:list={[
-                    "hover:text-blue-500 block font-thin sm:text-lg",
+                    "hover:text-blue-500 block text-gray-500 text-lg",
                     {
                       current: currentPath === href,
                     },
@@ -105,18 +105,18 @@ const currentPath = Astro.url.pathname;
   <div class="bg-blue-600 py-4 text-gray-100">
     <div class="container mx-auto px-4">
       <div class="-mx-4 flex flex-wrap justify-between">
-        <div
-          class="px-4 w-full text-center sm:w-auto sm:text-left font-thin sm:text-lg"
-        >
+        <div class="px-4 w-full text-center sm:w-auto sm:text-left sm:text-lg">
           Copyright &copy; <span id="currentYear"></span> Centro Integral Veterinario.
           Todos lo derechos reservados
         </div>
-        <div class="px-4 w-full text-center sm:w-auto sm:text-left font-thin">
+        <div
+          class="px-4 mt-3 sm:mt-0 w-full text-center sm:w-auto sm:text-left"
+        >
           <p>
             Sitio web realizado por <a
               href="https://portfolio-omar-solis.vercel.app/"
               target="_blank"
-              class="font-normal">Omar Solis</a
+              class="font-semibold">Omar Solis</a
             >
           </p>
         </div>

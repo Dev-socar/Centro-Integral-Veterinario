@@ -1,5 +1,5 @@
 ---
-import type { Servicio } from "../../content/servicios/servicios";
+import type { Servicio } from "../../interfaces/servicios/servicios";
 
 interface Props {
   servicio: Servicio;
@@ -24,9 +24,9 @@ const { servicio, index } = Astro.props;
     />
   </div>
   <div class="ml-4">
-    <p class="text-lg sm:text-xl uppercase font-semibold">
+    <p class="text-xl uppercase font-semibold">
       {servicio.servicio}
     </p>
-    <p class="text-sm sm:text-lg font-thin mt-2">{servicio.descripcion}</p>
+    <p class="text-lg font-normal text-gray-400 mt-2">{servicio.descripcion}</p>
   </div>
 </div>

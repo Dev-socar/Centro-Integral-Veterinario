@@ -7,8 +7,8 @@ import UbicacionMapa from "../components/shared/UbicacionMapa.astro";
 import Horario from "../components/shared/Horario.astro";
 import Enlace from "../components/shared/Enlace.astro";
 
-import { testimonios } from "../content/testimonios/testimonios";
-import { servicios } from "../content/servicios/servicios";
+import { testimonios } from "../interfaces/testimonios/testimonios";
+import { servicios } from "../interfaces/servicios/servicios";
 ---
 
 <Layout titulo="Centro Integral Veterinario">
@@ -16,7 +16,7 @@ import { servicios } from "../content/servicios/servicios";
   <section class="p-5 lg:p-0 lg:pb-20 bg-gray-50">
     <div>
       <h2
-        class="capitalize text-xl mx-auto text-center lg:text-4xl flex flex-col w-max"
+        class="capitalize text-3xl mx-auto text-center lg:text-4xl flex flex-col w-auto lg:w-max"
       >
         <span class="text-6xl">🐾</span>
         La mejor experiencia para tus mascotas
@@ -34,7 +34,9 @@ import { servicios } from "../content/servicios/servicios";
         />
       </div>
       <div class="flex flex-col justify-center">
-        <div class="swiper mySwiper w-full h-full mt-3 lg:h-1/2 bg-blue-400">
+        <div
+          class="swiper mySwiper w-full h-full mt-3 lg:h-1/2 bg-blue-400 rounded md:rounded-none"
+        >
           <div class="swiper-wrapper">
             {
               testimonios.map((testimonio) => (
@@ -66,15 +68,11 @@ import { servicios } from "../content/servicios/servicios";
       style="background-image: url('banner-index.jpg');"
     >
       <div class="absolute inset-0 bg-black opacity-50"></div>
-      <div
-        class="relative z-10 flex flex-col items-center justify-center h-full"
-      >
-        <h2
-          class="text-white text-4xl md:text-6xl font-bold text-center px-4 capitalize"
-        >
+      <div class="relative z-10 flex flex-col p-2 justify-center h-full">
+        <h2 class="text-white text-3xl font-bold text-center px-4 capitalize">
           Necesitas una consulta a domicilio?
         </h2>
-        <p class="sm:w-1/2 text-gray-100 mt-5 text-xl text-center">
+        <p class="sm:w-1/2 text-gray-200 mt-5 text-lg sm:mx-auto text-center">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
           numquam, placeat ipsam exercitationem optio maxime consequuntur soluta
           velit tenetur pariatur at laudantium voluptate nemo totam dolore et
@@ -83,18 +81,19 @@ import { servicios } from "../content/servicios/servicios";
         <Enlace href="#" texto="Saber Mas" />
       </div>
     </div>
-    
-    <div class="grid sm:grid-cols-2 gap-2 mt-5 px-2">
-      <div class="flex flex-col gap-2">
-        <p class="text-lg sm:text-3xl text-center font-semibold">
-          Encuentranos Aqui
-        </p>
-        <UbicacionMapa clases="w-full" />
+
+    <div class="my-10" data-aos="zoom-in-up" data-aos-duration="1000">
+      <div>
+        <h2
+          class="capitalize text-3xl mx-auto text-center lg:text-4xl flex flex-col w-auto lg:w-max"
+        >
+          <span class="text-6xl">🐾</span>
+          Dónde y Cuándo Encontrarnos
+          <div class="border-b-4 border-b-blue-600 mt-2 w-1/3 mx-auto"></div>
+        </h2>
       </div>
-      <div class="flex flex-col gap-2">
-        <p class="text-lg sm:text-3xl text-center font-semibold">
-          Horarios Disponibles
-        </p>
+      <div class="grid sm:grid-cols-2 gap-2 px-2 mt-5">
+        <UbicacionMapa clases="w-full" />
         <Horario />
       </div>
     </div>

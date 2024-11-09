@@ -1,20 +1,20 @@
 ---
-import { horario } from "../../content/horario/horario";
+import { horario } from "../../interfaces/horario/horario";
 ---
 
 <table class="w-full h-full">
   <thead class="w-full">
     <tr class="bg-blue-500 text-white">
-      <th class="p-2 sm:text-xl">Dia</th>
-      <th class="p-2 sm:text-xl">Hora</th>
+      <th class="p-2 text-xl">Dia</th>
+      <th class="p-2 text-xl">Hora</th>
     </tr>
   </thead>
   <tbody>
     {
       horario.map((h) => (
         <tr class="odd:bg-blue-100 even:bg-gray-50">
-          <td class="text-center text-lg font-thin">{h.dia}</td>
-          <td class="text-center text-lg font-thin">{h.hora}</td>
+          <td class="text-center text-lg text-gray-500 p-2">{h.dia}</td>
+          <td class="text-center text-lg text-gray-500 p-2">{h.hora}</td>
         </tr>
       ))
     }

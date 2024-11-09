@@ -5,15 +5,14 @@ import Heading from "../components/shared/Heading.astro";
 import TestimonioCard from "../components/testimonios/TestimonioCard.astro";
 import Layout from "../layout/Layout.astro";
 
-
-import { testimonios } from "../content/testimonios/testimonios";
+import { testimonios } from "../interfaces/testimonios/testimonios";
 ---
 
 <Layout titulo="Centro Integral Veterinario - Testimoniales">
   <Banner imgSrc="banner-testimonios.jpg" />
   <section class="mt-10 w-[90%] mx-auto overflow-hidden">
     <Heading texto="Mascotas" span="Felices" />
-    <p class="my-5 text-lg text-gray-500 font-thin">
+    <p class="my-5 text-lg text-gray-500">
       Conozca la experiencia de quienes han confiado en nosotros para cuidar de
       sus mascotas. En esta sección, compartimos las historias y opiniones de
       nuestros clientes satisfechos, quienes encontraron en nuestro hospital
