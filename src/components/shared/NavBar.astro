@@ -44,16 +44,7 @@ const currentPath = Astro.url.pathname;
   >
     {
       links.map(({ href, text }) => (
-        <a
-          href={href}
-          transition:persist
-          class:list={[
-            "text-xl font-light block",
-            {
-              "text-blue-600": currentPath === href,
-            },
-          ]}
-        >
+        <a href={href} class="text-xl font-light">
           {text}
         </a>
       ))
@@ -78,8 +69,18 @@ const currentPath = Astro.url.pathname;
     button?.addEventListener("click", () => {
       menuLinks.classList.toggle("hidden");
     });
-  };
+    // Get all the links in the menu
+    const links = menuLinks.querySelectorAll("a");
 
+    // Check the current path and add the "active" classes if needed
+    links.forEach((link) => {
+      if (link.href === window.location.origin + link.getAttribute("href")) {
+        link.classList.add("border-b-2", "border-blue-500");
+      } else {
+        link.classList.remove("border-b-2", "border-blue-500");
+      }
+    });
+  };
   document.addEventListener("DOMContentLoaded", setupMenuToggle);
   document.addEventListener("astro:after-swap", setupMenuToggle);
 </script>
