@@ -72,9 +72,14 @@ const currentPath = Astro.url.pathname;
     // Get all the links in the menu
     const links = menuLinks.querySelectorAll("a");
 
-    // Check the current path and add the "active" classes if needed
+    // Get the current path (without the domain part)
+    const currentPath = window.location.pathname;
+
+    // Check each link's href and compare the relative path
     links.forEach((link) => {
-      if (link.href === window.location.origin + link.getAttribute("href")) {
+      const linkPath = new URL(link.href).pathname; // Get the relative path of the link
+
+      if (linkPath === currentPath) {
         link.classList.add("border-b-2", "border-blue-500");
       } else {
         link.classList.remove("border-b-2", "border-blue-500");
