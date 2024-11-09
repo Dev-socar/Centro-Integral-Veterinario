@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 const links = [
   { href: "/", text: "Inicio" },
   { href: "/servicios", text: "Servicios" },
-  { href: 'https://centro-integral-veterinario.vercel.app/galeria', text: "Galeria" },
+  { href: "/galeria", text: "Galeria" },
   { href: "/sobre-nosotros", text: "Sobre Nosotros" },
   { href: "/testimoniales", text: "Testimoniales" },
 ];
@@ -46,6 +46,7 @@ const currentPath = Astro.url.pathname;
       links.map(({ href, text }) => (
         <a
           href={href}
+          transition:persist
           class:list={[
             "text-xl font-light block",
             {
