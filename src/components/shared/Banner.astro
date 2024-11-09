@@ -6,14 +6,6 @@ interface Props {
 const { imgSrc } = Astro.props;
 ---
 
-<div
-  class="bg-cover bg-center h-[500px] 2xl:h-screen"
-  style={`background-image: url(${imgSrc});`}
->
-  <img
-    src={imgSrc}
-    class="w-full h-full object-cover opacity-0"
-    onload="this.previousElementSibling.style.backgroundImage = `url(${this.src})`; this.remove();"
-    alt="Banner"
-  />
-</div>
+<div class=" bg-cover bg-center h-[500px] 2xl:h-[800px] " style={`background-image: url(${imgSrc});`}></div>
+
+
