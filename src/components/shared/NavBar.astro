@@ -44,19 +44,17 @@ const currentPath = Astro.url.pathname;
   >
     {
       links.map(({ href, text }) => (
-        <div>
-          <a href={href} class="text-xl font-light">
-            {text}
-          </a>
-          {currentPath === href ? (
-            <div
-              transition:name="menu-line"
-              class="border-b-2 border-blue-500"
-            />
-          ) : (
-            <div class="border-b-2  border-transparent" />
-          )}
-        </div>
+        <a
+          href={href}
+          class:list={[
+            "text-xl font-light",
+            {
+              "border-b-2 border-blue-500": currentPath === href,
+            },
+          ]}
+        >
+          {text}
+        </a>
       ))
     }
   </div>
